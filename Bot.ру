@@ -1,0 +1,16 @@
+from vkbottle import Bot
+
+# Вставь сюда свой токен вместо текста ниже
+TOKEN = "ТВОЙ_ТОКЕН_ОТ_ВК"
+
+bot = Bot(TOKEN)
+
+@bot.on.message(text=["/start"])
+async def start_handler(message):
+    await message.answer("Привет! Бот работает. Готов к фарму! 🚀")
+
+@bot.on.message(text=["/farm"])
+async def farm_handler(message):
+    await message.answer("Ты добыл 50 руды. Баланс обновлён! ⛏️")
+
+bot.run_forever()
